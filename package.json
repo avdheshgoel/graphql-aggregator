@@ -1,7 +1,7 @@
 {
   "name": "graphql-practice",
   "version": "1.0.0",
-  "description": "",
+  "description": "A solution to the data aggregation problem will be shown by using the GraphQL aggregation layer on RESTful microservices.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +13,14 @@
     "apollo-server": "^2.19.0",
     "dataloader": "^2.0.0",
     "node-fetch": "^2.6.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avdheshgoel/graphql-aggregator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avdheshgoel/graphql-aggregator/issues"
+  },
+  "homepage": "https://github.com/avdheshgoel/graphql-aggregator#readme"
 }
