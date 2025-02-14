@@ -27,7 +27,7 @@ const resolvers = {
         },
 
         getTeacher: () => {
-              return fetch(`https://localhost:8082/teachers`).then(function (response) {
+              return fetch(`https://teacher-service-808595275197.us-central1.run.app/teachers`).then(function (response) {
                   if (response.ok) {
                       return response.json()
                   } else {
@@ -63,7 +63,7 @@ const resolvers = {
         getTeacherById: (parent, args) => {
             const { id } = args
 
-            return fetch(`https://localhost:8082/teacher/${id}`).then(function (response) {
+            return fetch(`https://teacher-service-808595275197.us-central1.run.app/teacher/${id}`).then(function (response) {
                 if (response.ok) {
                     return response.json();
                 } else {
@@ -85,7 +85,7 @@ const resolvers = {
             const dto = {
                 ids: args.ids
             }
-            return fetch(`https://localhost:8082/teacher/find-by-ids`,
+            return fetch(`https://teacher-service-808595275197.us-central1.run.app/teacher/find-by-ids`,
                 { method: 'POST', body: JSON.stringify(dto), headers: { 'Content-Type': 'application/json' } }
             ).then(res => res.json())
         },
@@ -165,7 +165,7 @@ const resolvers = {
                 lastName: args.lastName
             }
 
-            return fetch(`https://localhost:8082/teacher`, {
+            return fetch(`https://teacher-service-808595275197.us-central1.run.app/teacher`, {
                 method: 'POST', body: JSON.stringify(teacher), headers: { 'Content-Type': 'application/json' }
             }).then(res => res.json())
         },
@@ -173,7 +173,7 @@ const resolvers = {
         updateTeacher: (parent, args) => {
             let id = args.id
             console.log(id)
-            return fetch(`https://localhost:8082/teacher/${id}`, {
+            return fetch(`https://teacher-service-808595275197.us-central1.run.app/teacher/${id}`, {
                 method: 'PUT', body: JSON.stringify(args), headers: { 'Content-Type': 'application/json' }
             }).then(res => res.json())
         },
@@ -190,7 +190,7 @@ const resolvers = {
 
         deleteTeacher: (parent, args) => {
             const { id } = args
-            return fetch(`https://localhost:8082/teacher/${id}`, { method: 'DELETE' }).then(res => res.json())
+            return fetch(`https://teacher-service-808595275197.us-central1.run.app/teacher/${id}`, { method: 'DELETE' }).then(res => res.json())
         },
     },
 };
@@ -221,7 +221,7 @@ const loaderClassroom = {
         const dto = {
             ids: ids
         }
-        const rows = await fetch(`https://localhost:8082/teacher/find-by-ids`,
+        const rows = await fetch(`https://teacher-service-808595275197.us-central1.run.app/teacher/find-by-ids`,
             { method: 'POST', body: JSON.stringify(dto), headers: { 'Content-Type': 'application/json' } }
         ).then(res => res.json())
 
